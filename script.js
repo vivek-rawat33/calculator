@@ -4,17 +4,6 @@ let toggle = document.querySelector(".mode");
 let body = document.querySelector("body");
 let currentMode = "dark";
 let string = "";
-let secret = () => {
-  body.style.backgroundImage = "url('secret.jpg')";
-  body.style.backgroundSize = "contain";
-  body.style.backgroundPosition = "center";
-
-};
-
-let removeSecret = () => {
-  body.style.backgroundImage = "";
-};
-
 let arr = Array.from(buttons);
 arr.forEach((buttons) => {
   buttons.addEventListener("click", (e) => {
@@ -32,13 +21,6 @@ arr.forEach((buttons) => {
     } else {
       string += e.target.innerHTML;
       input.value = string;
-    }
-
-    if (input.value === "0000") {
-      secret();
-    }
-    else{
-      removeSecret();
     }
   });
 });
