@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .dark {
   width: 100%;
   height: 100vh;
@@ -11,6 +12,7 @@
   align-items: center;
   background: linear-gradient(45deg, #0a0a0a, #3a4452);
 }
+
 .light {
   width: 100%;
   height: 100vh;
@@ -19,18 +21,22 @@
   align-items: center;
   background: linear-gradient(45deg, rgb(83, 82, 82), rgb(248, 243, 243));
 }
+
 .calculator {
   border: 1px solid #717377;
   padding: 20px;
   border-radius: 16px;
   background-color: transparent;
   box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.5);
+  width: 100%;
+  max-width: 400px; /* Ensure it doesn't get too wide */
 }
+
 input {
   width: 100%;
   border: none;
   padding: 24px;
-  margin: 10px;
+  margin: 10px 0;
   background: transparent;
   box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.1);
   font-size: 40px;
@@ -40,9 +46,10 @@ input {
   color: #ffffff;
 }
 
-input:paceholder {
+input::placeholder {
   color: #ffffff;
 }
+
 button {
   border: none;
   width: 60px;
@@ -55,15 +62,56 @@ button {
   box-shadow: -8px -8px 15px rgba(113, 115, 119, 0.1);
   cursor: pointer;
 }
+
 .equalBtn {
   background-color: #fb7c14;
 }
+
 .operatorD {
   color: #6dee0a;
 }
+
 .modeL {
   color: #3a4452;
 }
+
 .modeD {
   color: white;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .calculator {
+    max-width: 90%; /* Use more of the screen width on smaller devices */
+    padding: 15px;
+  }
+
+  input {
+    font-size: 30px; /* Smaller font size on mobile */
+    padding: 18px;
+  }
+
+  button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  input {
+    font-size: 28px; /* Even smaller font size for very small screens */
+    padding: 16px;
+  }
+
+  button {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .calculator {
+    max-width: 100%; /* Full width on small screens */
+    padding: 10px;
+  }
 }
